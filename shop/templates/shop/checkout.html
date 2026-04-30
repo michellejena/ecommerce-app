@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Checkout</title>
+<style>
+body{font-family:Poppins;background:#1a2a4f;color:white;}
+form{background:#c9a03d;padding:20px;color:#1a2a4f;width:300px;margin:auto;}
+input{width:100%;margin:5px;}
+button{background:#1a2a4f;color:white;}
+</style>
+</head>
+<body>
+
+<h1>Checkout 🍰</h1>
+
+<form method="POST">
+{% csrf_token %}
+<input type="text" name="name" placeholder="Full Name">
+<input type="email" name="email" placeholder="Email">
+<input type="text" name="address" placeholder="Address">
+<button type="submit">Submit Order</button>
+</form>
+
+</body>
+</html>

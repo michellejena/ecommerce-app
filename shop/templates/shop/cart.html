@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cart</title>
+<style>
+body{font-family:Poppins;background:#1a2a4f;color:white;}
+nav a{color:#c9a03d;margin:10px;text-decoration:none;}
+table{width:80%;margin:auto;background:#0f1a33;}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="/">Home</a>
+<a href="/products/">Products</a>
+<a href="/cart/">Cart</a>
+</nav>
+
+<h1>Your Cake Box 🎂</h1>
+
+<table>
+<tr><th>Name</th><th>Price</th><th>Action</th></tr>
+{% for p in products %}
+<tr>
+<td>{{p.name}}</td>
+<td>${{p.price}}</td>
+<td><a href="/remove/{{p.id}}/">Remove</a></td>
+</tr>
+{% endfor %}
+</table>
+
+<h2>Total: ${{total}}</h2>
+
+<a href="/checkout/"><button>Checkout</button></a>
+
+</body>
+</html>
