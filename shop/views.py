@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
 from .models import Product
 
 def homepage(request):
@@ -32,7 +33,7 @@ def checkout(request):
     if request.method == "POST":
         name = request.POST.get("name")
         request.session['cart'] = []
-        return redirect('thank_you') + f"?name={name}"
+        return redirect(reverse('thank_you') + f"?name={name}")
     return render(request, 'shop/checkout.html')
 
 def thank_you(request):
